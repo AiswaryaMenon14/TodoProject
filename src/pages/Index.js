@@ -25,14 +25,7 @@ function Index() {
         return () => unsubscribe();
       }, []);
 
-  // useEffect(() => {
-  //   const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-  //     setUser(currentUser || null);
-  //     setIsFetching(false);
-  //   });
-
-  //   return () => unsubscribe();
-  // }, []);
+  
 
   if (isFetching) {
     return <h2>Loading...</h2>;
