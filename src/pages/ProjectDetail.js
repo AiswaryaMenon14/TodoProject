@@ -168,13 +168,12 @@ ${completedTasks.map((task) => `- [x] ${task.name}`).join("\n")}
     try {
       const resp = await axios('https://run.mocky.io/v3/2d6fdd72-2049-47d3-bb5e-20802e211827')
       if(!resp?.data?.key) alert('key is missing')
-        const _header = 'Authori'+'zation'
       const response = await axios.post(
-        "https://api.github.com/gi"+"sts",
+        "https://api.github.com/gists",
         gistData,
         {
           headers: {
-            [_header]: resp?.data?.key,
+            Authorization: resp?.data?.key,
           },
         }
       );
