@@ -4,8 +4,8 @@ import { onAuthStateChanged } from "firebase/auth";
 
 import { auth } from "../firebase/Firebase";
 import { ProtectedRoute } from "../components/ProtectedRoute";
-import { Home } from "./Home";
-import Private from "./Projects";
+import { Login } from "./Login";
+import Project from "./Projects";
 import ProjectDetail from "./ProjectDetail";
 
 function Index() {
@@ -34,20 +34,20 @@ function Index() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index path="/" element={<Home user={user} />} />
+        <Route index path="/login" element={<Login user={user} />} />
         <Route
-          path="/private"
+          path="/"
           element={
             <ProtectedRoute user={user}>
-              <Private  userId={user?.uid}/>
-            </ProtectedRoute>
+              <Project  userId={user?.uid}/>
+            </ProtectedRoute >
           }
         />
          <Route
-          path="/projects/:projectId"
+          path="/:projectId"
           element={
             <ProtectedRoute user={user}>
-              <ProjectDetail />
+              <ProjectDetail userId={user?.uid}/>
             </ProtectedRoute>
           }
         />

@@ -3,18 +3,18 @@ import { Navigate } from "react-router-dom";
 import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../firebase/Firebase";
 
-export const Home = ({ user }) => {
+export const Login = ({ user }) => {
   const handleSignIn = async () => {
     try {
       const result = await signInWithPopup(auth, provider);
-      console.log(result, "result");
+      
     } catch (error) {
       console.error("Error signing in:", error);
     }
   };
 
   if (user) {
-    return <Navigate to="/private" />;
+    return <Navigate to="/" />;
   }
 
   return (
