@@ -57,8 +57,8 @@ const ProjectsPage = ({ userId }) => {
   };
 
   return (
-    <div className="projects-page">
-      <h1>Projects</h1>
+    <div className="p-6">
+      <h1 className="text-center text-2xl font-bold">Projects</h1>
       <input
         type="text"
         value={newProject}
@@ -72,7 +72,7 @@ const ProjectsPage = ({ userId }) => {
       >
         Add Project
       </button>
-      <ul>
+      <ul className="mt-4">
         {projects.map((project) => (
           <li
             key={project.id}

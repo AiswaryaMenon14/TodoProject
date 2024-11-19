@@ -177,7 +177,6 @@ ${completedTasks.map((task) => `- [x] ${task.name}`).join("\n")}
           },
         }
       );
-      // alert(`Gist Created: ${response.data.html_url}`);
       window.open(response.data.html_url, '_blank');
     } catch (error) {
       console.error("Error exporting gist:", error);
@@ -185,8 +184,10 @@ ${completedTasks.map((task) => `- [x] ${task.name}`).join("\n")}
   };
 
   return (
-    <div className="project-detail">
-      <h2 className="text-2xl font-bold mb-4">{projectName} Tasks</h2>
+    <div className="p-7">
+      <h2 className="text-2xl font-bold text-center">{projectName} Tasks</h2>
+
+
 
       <div className="mb-4">
         {editingProjectName ? (
@@ -240,7 +241,7 @@ ${completedTasks.map((task) => `- [x] ${task.name}`).join("\n")}
         </button>
       </div>
 
-      <h3 className="text-xl font-bold mt-4">Pending Tasks</h3>
+      <h3 className="text-xl font-bold mt-4 mb-3">Pending Tasks</h3>
       <ul>
         {tasks
           .filter((task) => task.status === "Pending")
@@ -251,7 +252,7 @@ ${completedTasks.map((task) => `- [x] ${task.name}`).join("\n")}
           ))}
       </ul>
 
-      <h3 className="text-xl font-bold mt-4">Completed Tasks</h3>
+      <h3 className="text-xl font-bold mt-4 mb-3">Completed Tasks</h3>
       <ul>
         {tasks
           .filter((task) => task.status === "Completed")
