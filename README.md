@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+A task management application built using React and Firebase, allowing users to create, view, update, and delete tasks for specific projects. The application also supports user authentication and task export functionality.
+Features
+•	Firebase Authentication for secure user login.
+•	Task management with options to add, edit, delete, and mark tasks as completed or pending.
+•	User-specific project and task storage.
+•	Export tasks to a Markdown file for local storage.
+•	Responsive UI built with Tailwind CSS
+Setup Instructions
+1.	Clone the Repository:
+      https://github.com/AiswaryaMenon14/TodoProject.git
+3.	Install Dependencies: Ensure you have Node.js installed. Then, run:
+npm install
+4.	Configure Firebase:
+o	Go to Firebase Console, create a new project, and set up Firestore and Authentication.
+5.	Initialize Firestore:
+o	Set up Firestore collections:
+1.	users (store user-specific data)
+2.	projects (store project details)
+3.	tasks (store task data under respective projects)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Run Instructions
+1.	Start the Development Server:
+npm start
+The application will run on http://localhost:3000.
+2.	Sign In: Use Google Authentication to log in and manage tasks.
 
-## Available Scripts
+How to Use the Application
+Add a Project
+1.	After signing in, navigate to the Projects Page.
+2.	Enter a project name in the input field provided.
+3.	Click Add Project to create a new project. This project will be associated with your user ID.
+View Project Details
+1.	On the Projects Page, you will see a list of your projects.
+2.	Click the View button next to a project to navigate to its Details Page.
+Manage Tasks
+1.	On the Details Page, you can:
+o	Add Tasks:
+	Enter a task name in the input field and click Add Task.
+	Each task will be stored under the specific project in Firestore, with its status set to Pending by default.
+o	Toggle Task Status:
+	Use the checkbox to mark tasks as Completed or revert them to Pending.
+o	Edit Tasks:
+	Click the Edit button next to a task and update the task name in the prompt that appears.
+o	Delete Tasks:
+	Click the Delete button to permanently remove a task.
+Export Tasks as Gist
+1.	On the Details Page, you will find an option to Export Tasks.
+2.	Click the export button to save the list of tasks (in Markdown format) to your local system or upload it as a public/private Gist using GitHub’s API.
+Note: Ensure that you have GitHub credentials and permissions configured if using the Gist export feature.
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
